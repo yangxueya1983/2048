@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class App : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
+
+    [SerializeField] public Board board;
     // Start is called before the first frame update
     void Start()
     {

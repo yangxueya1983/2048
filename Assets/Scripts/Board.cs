@@ -22,16 +22,8 @@ public class Board : MonoBehaviour
     void Start()
     {
         Debug.Log("Board Start");
-        Tile testTile = CreateTile();
-        TileCell randomCell = tileGrid.GetRandomEmptyCell();
-        if (randomCell == null)
-        {
-            // all cells are occupied
-        }
-        else
-        {
-            testTile.transform.position = randomCell.transform.position;    
-        }
+        SpawnTile();
+        SpawnTile();
         
     }
 
@@ -42,16 +34,31 @@ public class Board : MonoBehaviour
         //Debug.Log("Update" + testTile.transform.position.ToString());
     }
 
-    public Tile CreateTile()
+    public Tile SpawnTile()
     {
         Tile tile = Instantiate(tilePrefab, tileGrid.transform);
-        //tile.SetState(tileStates[0]);
-        //tile.Spawn(grid.GetRandomEmptyCell());
+        tile.SetState(tileStatesArr[0]);
+        tile.SpawnInCell(tileGrid.GetRandomEmptyCell());
         tiles.Add(tile);
         
-        Debug.Log("CreateTile");
         return tile;
     }
-    
+
+
+    public void ClearBoard()
+    {
+        foreach (var cell in tileGrid.cells)
+        {
+            cell.tile = null;
+        }
+
+        foreach (var tile in tiles)
+        {
+            tile.crtCell = null;
+            Destroy(tile.gameObject);
+        }
+        
+        tiles.Clear();
+    }
 
 }

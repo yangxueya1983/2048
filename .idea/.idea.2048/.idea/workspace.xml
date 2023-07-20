@@ -5,14 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="efeec435-374e-4751-a8ab-ec57e888ce87" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TileState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.2048/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2048/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefebs/Tile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefebs/Tile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/App.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Board.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Board.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TileGrid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TileGrid.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker1.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker1.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TileStates/1024.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TileStates/1024.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TileStates/128.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TileStates/128.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TileStates/2048.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TileStates/2048.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TileStates/256.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TileStates/256.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TileStates/512.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TileStates/512.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,10 +22,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/130809ae6f984869a6663c878f16e3f3469200/1e/938d04fe/CancellationTokenSource.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/13cce389e4084c7a9c67df6bba1119b9171a00/00/b34722fd/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/13cce389e4084c7a9c67df6bba1119b9171a00/7c/0411f3d1/Debug.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/13cce389e4084c7a9c67df6bba1119b9171a00/c1/302e069e/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -103,7 +107,7 @@
       <updated>1689656056506</updated>
       <workItem from="1689656057697" duration="104000" />
       <workItem from="1689656222679" duration="2859000" />
-      <workItem from="1689697939966" duration="14202000" />
+      <workItem from="1689697939966" duration="16954000" />
     </task>
     <servers />
   </component>
@@ -133,26 +137,26 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Board.cs</url>
-          <line>41</line>
+          <line>33</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Board.cs" initialLine="28" containingFunctionPresentation="Method 'Update'">
             <startOffsets>
-              <option value="1005" />
+              <option value="748" />
             </startOffsets>
             <endOffsets>
-              <option value="1061" />
+              <option value="804" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Board.cs</url>
-          <line>34</line>
+          <line>26</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Board.cs" initialLine="24" containingFunctionPresentation="Method 'Start'">
             <startOffsets>
-              <option value="836" />
+              <option value="579" />
             </startOffsets>
             <endOffsets>
-              <option value="836" />
+              <option value="579" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="13" />

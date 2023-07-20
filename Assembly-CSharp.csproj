@@ -47,10 +47,10 @@
   <ItemGroup>
      <Compile Include="Assets/Scripts/Tile.cs" />
      <Compile Include="Assets/Scripts/TileCell.cs" />
+     <Compile Include="Assets/Scripts/GameManager.cs" />
      <Compile Include="Assets/Scripts/Board.cs" />
      <Compile Include="Assets/Scripts/TileGrid.cs" />
      <Compile Include="Assets/Scripts/TileState.cs" />
-     <Compile Include="Assets/Scripts/App.cs" />
      <Folder Include="Assets" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
@@ -71,6 +71,7 @@
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader" />
      <None Include="Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt" />
+     <Folder Include="Assets/TileStates" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" />
      <Folder Include="Assets/TextMesh Pro/Shaders" />
