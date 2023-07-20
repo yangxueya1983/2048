@@ -49,6 +49,7 @@
      <Compile Include="Assets/Scripts/TileCell.cs" />
      <Compile Include="Assets/Scripts/Board.cs" />
      <Compile Include="Assets/Scripts/TileGrid.cs" />
+     <Compile Include="Assets/Scripts/TileState.cs" />
      <Compile Include="Assets/Scripts/App.cs" />
      <Folder Include="Assets" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

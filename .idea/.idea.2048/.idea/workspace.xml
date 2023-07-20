@@ -5,27 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="efeec435-374e-4751-a8ab-ec57e888ce87" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.2048/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2048/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TileState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefebs/Tile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefebs/Tile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Board.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Board.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TileGrid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TileGrid.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker1-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker1-prev.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker1.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker1.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler1.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler10.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler11.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler2.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler3.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler4.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler5.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler6.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler7.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler8.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler9.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +103,7 @@
       <updated>1689656056506</updated>
       <workItem from="1689656057697" duration="104000" />
       <workItem from="1689656222679" duration="2859000" />
-      <workItem from="1689697939966" duration="5951000" />
+      <workItem from="1689697939966" duration="14202000" />
     </task>
     <servers />
   </component>
@@ -133,55 +120,55 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/TileGrid.cs</url>
-          <line>49</line>
+          <line>47</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/TileGrid.cs" initialLine="48" containingFunctionPresentation="Method 'GetRandomEmptyCell'">
             <startOffsets>
-              <option value="1008" />
+              <option value="943" />
             </startOffsets>
             <endOffsets>
-              <option value="1028" />
+              <option value="963" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Board.cs</url>
-          <line>25</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Board.cs" initialLine="21" containingFunctionPresentation="Method 'Start'">
-            <startOffsets>
-              <option value="617" />
-            </startOffsets>
-            <endOffsets>
-              <option value="686" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Board.cs</url>
-          <line>32</line>
+          <line>41</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Board.cs" initialLine="28" containingFunctionPresentation="Method 'Update'">
             <startOffsets>
-              <option value="853" />
+              <option value="1005" />
             </startOffsets>
             <endOffsets>
-              <option value="909" />
+              <option value="1061" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Board.cs</url>
-          <line>24</line>
+          <line>34</line>
           <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Board.cs" initialLine="24" containingFunctionPresentation="Method 'Start'">
             <startOffsets>
-              <option value="539" />
+              <option value="836" />
             </startOffsets>
             <endOffsets>
-              <option value="606" />
+              <option value="836" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/TileGrid.cs</url>
+          <line>21</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/TileGrid.cs" initialLine="21" containingFunctionPresentation="Method 'Start'">
+            <startOffsets>
+              <option value="444" />
+            </startOffsets>
+            <endOffsets>
+              <option value="445" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

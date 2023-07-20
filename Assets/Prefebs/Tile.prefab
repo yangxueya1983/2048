@@ -91,7 +91,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   background: {fileID: 4799707529504620357}
-  text: {fileID: 6535627570523791036}
+  numText: {fileID: 6535627570523791036}
+  state: {fileID: 11400000, guid: 10d3888a8c78043e38e080d983b91f62, type: 2}
 --- !u!1 &7595840810400451872
 GameObject:
   m_ObjectHideFlags: 0

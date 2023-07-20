@@ -44,8 +44,6 @@ public class TileGrid : MonoBehaviour
             if (index == startingIndex)
                 return null;
         }
-        
-        Debug.Log(index);
     
         return cells[index];
     }

@@ -9,6 +9,7 @@ public class Board : MonoBehaviour
 {
     [SerializeField] private TileGrid tileGrid;
     [SerializeField] private Tile tilePrefab;
+    public TileState[] tileStatesArr;
 
     private List<Tile> tiles;
 
@@ -23,12 +24,15 @@ public class Board : MonoBehaviour
         Debug.Log("Board Start");
         Tile testTile = CreateTile();
         TileCell randomCell = tileGrid.GetRandomEmptyCell();
-        if (randomCell != null)
+        if (randomCell == null)
+        {
+            // all cells are occupied
+        }
+        else
         {
             testTile.transform.position = randomCell.transform.position;    
         }
         
-        //Debug.Log("Start" + tileGrid.cells[0].transform.position.ToString());
     }
 
     private void Update()
