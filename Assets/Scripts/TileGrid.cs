@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -8,6 +9,9 @@ public class TileGrid : MonoBehaviour
 {
     public TileCell[] cells { get; private set; }
 
+    public int width = 4;
+    public int height = 4;
+    
     private void Awake()
     {
         cells = GetComponentsInChildren<TileCell>();
@@ -17,15 +21,39 @@ public class TileGrid : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Debug.Log("TileGrid Start");
-        
+        for (int i = 0; i < cells.Length; i++)
+        {
+            TileCell tmpCell = cells[i];
+            int y = i / width;
+            int x = i % width;
+            tmpCell.coordinates = new Vector2Int(x, y);
+        }  
     }
 
-    // Update is called once per frame
-    void Update()
+    public TileCell GetCell(int x, int y)
     {
+        if (x>=0 && x<width && y>=0 && y<height)
+        {
+            int index = y * width + x;
+            if (index < cells.Length)
+            {
+                return cells[index];
+            }
+        }
+        
+        return null;
     }
-    
+
+    public TileCell GetAdjacentCell(TileCell cell, Vector2Int direction)
+    { 
+        Vector2Int coordinates = cell.coordinates;
+        coordinates.x += direction.x;
+        coordinates.y -= direction.y;
+        
+        Debug.Log(cell.coordinates.ToString() + direction.ToString() + coordinates.ToString());
+        
+        return GetCell(coordinates.x, coordinates.y);
+    }
     
     public TileCell GetRandomEmptyCell()
     {

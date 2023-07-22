@@ -13,7 +13,8 @@ public class Tile : MonoBehaviour
 
 
     public TileCell crtCell;
-    
+
+    public bool locked;
     
     public void SetState(TileState aState)
     {
@@ -39,6 +40,59 @@ public class Tile : MonoBehaviour
         transform.position = cell.transform.position;
 
     }
+
+    public void MoveToCell(TileCell toCell)
+    {
+        //clear old
+        if (crtCell != null)
+        {
+            crtCell.tile = null;
+        }
+        
+        //modify
+        crtCell = toCell;
+        crtCell.tile = this;
+        
+        
+        StartCoroutine(Animate(crtCell.transform.position, false));
+    }
+
+    public void MergeToCell(TileCell cell, TileState nextState)
+    {
+        //delete old
+        if (crtCell != null) {
+            crtCell.tile = null;
+        }
+        crtCell = null;
+        
+        //modify new
+        cell.tile.SetState(nextState);
+        cell.tile.locked = true;
+
+        StartCoroutine(Animate(cell.transform.position, true));
+    }
+    
+    private IEnumerator Animate(Vector3 to, bool merging)
+    {
+        float elapsed = 0f;
+        float duration = 0.1f;
+
+        Vector3 from = transform.position;
+
+        while (elapsed < duration)
+        {
+            transform.position = Vector3.Lerp(from, to, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = to;
+
+        if (merging) {
+            Destroy(gameObject);
+        }
+    }
+    
     
     void Start()
     {
@@ -50,4 +104,7 @@ public class Tile : MonoBehaviour
     {
         
     }
+
 }
+
+

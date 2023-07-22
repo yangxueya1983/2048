@@ -703,6 +703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileGrid: {fileID: 647864101}
   tilePrefab: {fileID: 1404273774101019511, guid: 3147381133da34d99b2228c416ba2efd, type: 3}
+  gmManager: {fileID: 68549808}
   tileStatesArr:
   - {fileID: 11400000, guid: 10d3888a8c78043e38e080d983b91f62, type: 2}
   - {fileID: 11400000, guid: b671790ae3a27436487d4b33163cab76, type: 2}
@@ -1579,6 +1580,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f63dffec6de14d5982ce01695dc96a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  width: 4
+  height: 4
 --- !u!1001 &824203557
 PrefabInstance:
   m_ObjectHideFlags: 0
