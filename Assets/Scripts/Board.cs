@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 using UnityEngine.PlayerLoop;
+using Random = UnityEngine.Random;
 using Update = Unity.VisualScripting.Update;
 
 public class Board : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
@@ -20,7 +21,7 @@ public class Board : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
     private Vector2 startP;
     private Vector2 endP;
     
-    private bool waiting;
+    private bool waiting;// if swipe too fast, the next action should wait
 
     void Awake()
     {
@@ -30,12 +31,6 @@ public class Board : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
 
     void Start()
     {
-        Tile t0 = SpawnTile();
-        Tile t1 = SpawnTile();
-        
-        //Debug.Log(t0);
-        //Debug.Log(t1);
-        
     }
 
     private void Update()
@@ -48,7 +43,20 @@ public class Board : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
     public Tile SpawnTile()
     {
         Tile tile = Instantiate(tilePrefab, tileGrid.transform);
-        tile.SetState(tileStatesArr[0]);
+
+        bool canBeFour = false;
+        foreach (var tt in tiles)
+        {
+            if (tt.state.number > 4)
+            {
+                canBeFour = true;
+                break;
+            }
+            
+        }
+        int randomIndex = (canBeFour && Random.Range(0, 3)==2) ? 1 : 0;
+
+        tile.SetState(tileStatesArr[randomIndex]);
         tile.SpawnInCell(tileGrid.GetRandomEmptyCell());
         tiles.Add(tile);
         
@@ -64,13 +72,10 @@ public class Board : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
             for (int y = startY; y >= 0 && y < tileGrid.height; y += incrementY)
             {
                 TileCell cell = tileGrid.GetCell(x, y);
-                if (cell != null)
+                if (cell != null && cell.occupied)
                 {
-                    if (cell.occupied) {
-                        changed |= MoveTile(cell.tile, direction);
-                    }
+                    changed |= MoveTile(cell.tile, direction);
                 }
-                
             }
         }
 
@@ -121,15 +126,13 @@ public class Board : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
             TileState newState = tileStatesArr[index];
         
             tile.MergeToCell(tileCell, newState);
+            
+            gmManager.IncreaseScore(newState.number);
         }
         else
         {
             Debug.Log("error in MergeTileToCell");
         }
-       
-        
-        //TODO
-        //gmManager.IncreaseScore(newState.number);
     }
 
     public bool CanMerge(Tile fromTile, TileCell toCell)
@@ -161,13 +164,17 @@ public class Board : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
         startP = eventData.position;
         Debug.Log("OnBeginDrag");
     }
-
+    
     public void OnDrag(PointerEventData eventData)
     {
         //Debug.Log("OnDrag");
     }
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (waiting)
+        {
+            return;
+        }
         endP = eventData.position;
 
         float chaX = endP.x - startP.x;
@@ -208,7 +215,7 @@ public class Board : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
     private IEnumerator WaitForChanges()
     {
         waiting = true;
-
+ 
         yield return new WaitForSeconds(0.1f);
 
         waiting = false;
@@ -221,9 +228,45 @@ public class Board : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
             SpawnTile();
         }
 
-        // if (CheckForGameOver()) {
-        //     gameManager.GameOver();
-        // }
+        if (CheckForGameOver()) {
+            gmManager.GameOver();
+        }
+    }
+
+    private bool CheckForGameOver()
+    {
+        if (tiles.Count != tileGrid.width * tileGrid.height)
+        {
+            return false;
+        }
+
+        foreach (var tile in tiles)
+        {
+            TileCell up = tileGrid.GetAdjacentCell(tile.crtCell, Vector2Int.up);
+            TileCell down = tileGrid.GetAdjacentCell(tile.crtCell, Vector2Int.down);
+            TileCell left = tileGrid.GetAdjacentCell(tile.crtCell, Vector2Int.left);
+            TileCell right = tileGrid.GetAdjacentCell(tile.crtCell, Vector2Int.right);
+
+
+            if (up!=null && CanMerge(tile, up))
+            {
+                return false;
+            }
+            if (down!=null && CanMerge(tile, down))
+            {
+                return false;
+            }
+            if (left!=null && CanMerge(tile, left))
+            {
+                return false;
+            }
+            if (right!=null && CanMerge(tile, right))
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
         
 }

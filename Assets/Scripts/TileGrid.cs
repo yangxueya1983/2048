@@ -50,7 +50,7 @@ public class TileGrid : MonoBehaviour
         coordinates.x += direction.x;
         coordinates.y -= direction.y;
         
-        Debug.Log(cell.coordinates.ToString() + direction.ToString() + coordinates.ToString());
+        //Debug.Log(cell.coordinates.ToString() + direction.ToString() + coordinates.ToString());
         
         return GetCell(coordinates.x, coordinates.y);
     }

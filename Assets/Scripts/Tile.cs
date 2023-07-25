@@ -78,7 +78,7 @@ public class Tile : MonoBehaviour
         float duration = 0.1f;
 
         Vector3 from = transform.position;
-
+        
         while (elapsed < duration)
         {
             transform.position = Vector3.Lerp(from, to, elapsed / duration);
