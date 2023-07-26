@@ -144,9 +144,9 @@ public class Board : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
         
             tile.MergeToCell(tileCell, newState);
 
-            if (newState.number == 4)
+            if (newState.number == successNumber)
             {
-                gmManager.ShowGameOver();
+                gmManager.ShowGameSuccess();
             }
             
             gmManager.IncreaseScore(newState.number);
