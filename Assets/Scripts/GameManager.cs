@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
         gameOver.interactable = false;
         gameSuccess.alpha = 0f;
         gameSuccess.interactable = false;
+        gameSuccess.gameObject.SetActive(true);
         
         board.ClearBoard();
         board.SpawnTile();
@@ -49,16 +50,17 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void GameOver()
+    public void ShowGameOver()
     {
         board.enabled = false;
+        gameSuccess.gameObject.SetActive(false);
         gameOver.interactable = true;
         
         StartCoroutine(Fade(gameOver, 1f, 1f));
         soundPalyer.PlayLose();
     }
     
-    public void GameSuccess()
+    public void ShowGameSuccess()
     {
         board.enabled = false;
         gameSuccess.interactable = true;

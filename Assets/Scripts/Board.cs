@@ -15,7 +15,7 @@ public class Board : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
     [SerializeField] private Tile tilePrefab;
     [SerializeField] private GameManager gmManager;
 
-  
+    private int successNumber = 2048;
     public SoundPlayer soundPlayer;
     
     
@@ -36,6 +36,7 @@ public class Board : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
 
     void Start()
     {
+        successNumber = tileStatesArr[^1].number;
     }
 
     private void Update()
@@ -142,6 +143,11 @@ public class Board : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
             TileState newState = tileStatesArr[index];
         
             tile.MergeToCell(tileCell, newState);
+
+            if (newState.number == 4)
+            {
+                gmManager.ShowGameOver();
+            }
             
             gmManager.IncreaseScore(newState.number);
         }
@@ -244,7 +250,7 @@ public class Board : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
         }
 
         if (CheckForGameOver()) {
-            gmManager.GameOver();
+            gmManager.ShowGameOver();
         }
     }
 
