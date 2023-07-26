@@ -9,12 +9,12 @@ public class Tile : MonoBehaviour
 {
     [SerializeField] private Image background;
     [SerializeField] private TextMeshProUGUI numText;
+
     public TileState state;
 
 
-    public TileCell crtCell;
-
-    public bool locked;
+    [HideInInspector] public TileCell crtCell;
+    [HideInInspector] public bool locked;
     
     public void SetState(TileState aState)
     {
@@ -70,6 +70,7 @@ public class Tile : MonoBehaviour
         cell.tile.locked = true;
 
         StartCoroutine(Animate(cell.transform.position, true));
+        
     }
     
     private IEnumerator Animate(Vector3 to, bool merging)

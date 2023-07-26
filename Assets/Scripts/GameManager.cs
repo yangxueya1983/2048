@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     private int _score;
     
     public CanvasGroup gameOver;
+    public CanvasGroup gameSuccess;
     
     void Start()
     {
@@ -36,6 +37,8 @@ public class GameManager : MonoBehaviour
 
         gameOver.alpha = 0f;
         gameOver.interactable = false;
+        gameSuccess.alpha = 0f;
+        gameSuccess.interactable = false;
         
         board.ClearBoard();
         board.SpawnTile();
@@ -52,6 +55,14 @@ public class GameManager : MonoBehaviour
         gameOver.interactable = true;
         
         StartCoroutine(Fade(gameOver, 1f, 1f));
+    }
+    
+    public void GameSuccess()
+    {
+        board.enabled = false;
+        gameSuccess.interactable = true;
+        
+        StartCoroutine(Fade(gameSuccess, 1f, 1f));
     }
 
     private IEnumerator Fade(CanvasGroup canvasGroup, float to, float delay = 0f)
