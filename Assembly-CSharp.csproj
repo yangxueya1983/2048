@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets/Scripts/Tile.cs" />
+     <Compile Include="Assets/Scripts/SoundPlayer.cs" />
      <Compile Include="Assets/Scripts/TileCell.cs" />
      <Compile Include="Assets/Scripts/GameManager.cs" />
      <Compile Include="Assets/Scripts/Board.cs" />
@@ -80,6 +81,7 @@
      <Folder Include="Assets/TextMesh Pro/Fonts" />
      <None Include="Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt" />
      <Folder Include="Assets/Fonts" />
+     <Folder Include="Assets/Sound" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" />
      <Folder Include="Assets/Scripts" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" />

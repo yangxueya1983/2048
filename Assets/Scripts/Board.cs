@@ -14,6 +14,11 @@ public class Board : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
     [SerializeField] private TileGrid tileGrid;
     [SerializeField] private Tile tilePrefab;
     [SerializeField] private GameManager gmManager;
+
+  
+    public SoundPlayer soundPlayer;
+    
+    
     public TileState[] tileStatesArr;
 
     private List<Tile> tiles;
@@ -66,6 +71,7 @@ public class Board : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
     private void Move(Vector2Int direction, int startX, int incrementX, int startY, int incrementY)
     {
         bool changed = false;
+        bool merged = false;
 
         for (int x = startX; x >= 0 && x < tileGrid.width; x += incrementX)
         {
@@ -74,16 +80,25 @@ public class Board : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
                 TileCell cell = tileGrid.GetCell(x, y);
                 if (cell != null && cell.occupied)
                 {
-                    changed |= MoveTile(cell.tile, direction);
+                    changed |= MoveTile(cell.tile, direction, ref merged);
                 }
             }
         }
 
         if (changed) {
+            if (merged)
+            {
+                soundPlayer.PlayMerge();
+            }
+            else
+            {
+                soundPlayer.PlayMove();
+            }
+            
             StartCoroutine(WaitForChanges());
         }
     }
-    public bool MoveTile(Tile tile, Vector2Int direction)
+    public bool MoveTile(Tile tile, Vector2Int direction, ref bool merged)
     {
         TileCell targetCell = null;
         TileCell adjacentCell = tileGrid.GetAdjacentCell(tile.crtCell, direction);
@@ -94,6 +109,7 @@ public class Board : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
             {
                 if (CanMerge(tile, adjacentCell))
                 {
+                    merged = true;
                     MergeTileToCell(tile, adjacentCell);
                     return true;
                 }
@@ -208,7 +224,6 @@ public class Board : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
                 Move(Vector2Int.down, 0, 1, tileGrid.height - 2, -1);
             }
         }
-
     }
     
     

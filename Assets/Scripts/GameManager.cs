@@ -5,7 +5,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-
+    public SoundPlayer soundPalyer;
     public Board board;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI bestText;
@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
         gameOver.interactable = true;
         
         StartCoroutine(Fade(gameOver, 1f, 1f));
+        soundPalyer.PlayLose();
     }
     
     public void GameSuccess()
@@ -63,6 +64,7 @@ public class GameManager : MonoBehaviour
         gameSuccess.interactable = true;
         
         StartCoroutine(Fade(gameSuccess, 1f, 1f));
+        soundPalyer.PlaySuccess();
     }
 
     private IEnumerator Fade(CanvasGroup canvasGroup, float to, float delay = 0f)
