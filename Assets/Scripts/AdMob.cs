@@ -9,17 +9,17 @@ public class AdMob : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // MobileAds.RaiseAdEventsOnUnityMainThread = true;
-        // MobileAds.Initialize(initStatus => { });
-        //
-        // LoadAd();
-        // ShowAd();
+         MobileAds.RaiseAdEventsOnUnityMainThread = true;
+         MobileAds.Initialize(initStatus => { });
+        
+         LoadAd();
+         ShowAd();
     }
 
 #if UNITY_ANDROID
-        private const string _adUnitId = "ca-app-pub-3940256099942544/6300978111";
+        private const string _adUnitId = "ca-app-pub-3296086814487051/3112542328";
 #elif UNITY_IPHONE
-    private const string _adUnitId = "ca-app-pub-3940256099942544/2934735716";
+    private const string _adUnitId = "ca-app-pub-3296086814487051/1585646152";
 #else
         private const string _adUnitId = "unused";
 #endif
@@ -35,9 +35,9 @@ public class AdMob : MonoBehaviour
         {
             DestroyAd();
         }
-        //Screen.safeArea.
-        AdSize bannerSize = AdSize.GetPortraitAnchoredAdaptiveBannerAdSizeWithWidth(Screen.width);
-        _bannerView = new BannerView(_adUnitId, bannerSize, AdPosition.Top);
+
+        AdSize bannerSize = AdSize.GetPortraitAnchoredAdaptiveBannerAdSizeWithWidth(AdSize.FullWidth);
+        _bannerView = new BannerView(_adUnitId, bannerSize, AdPosition.Bottom);
 
         // Listen to events the banner may raise.
         ListenToAdEvents();

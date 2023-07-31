@@ -17,9 +17,14 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-        NewGame();
+        StartCoroutine(FirstNewGame());
     }
 
+    private IEnumerator FirstNewGame()
+    {
+        yield return new WaitForSeconds(0.1f);
+        NewGame();
+    }
 
     void SetScore(int score)
     {
