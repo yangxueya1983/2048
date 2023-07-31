@@ -48,9 +48,7 @@ public class TileGrid : MonoBehaviour
         Vector2Int coordinates = cell.coordinates;
         coordinates.x += direction.x;
         coordinates.y -= direction.y;
-        
-        //Debug.Log(cell.coordinates.ToString() + direction.ToString() + coordinates.ToString());
-        
+
         return GetCell(coordinates.x, coordinates.y);
     }
     

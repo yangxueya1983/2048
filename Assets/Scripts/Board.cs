@@ -30,7 +30,6 @@ public class Board : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
 
     void Awake()
     {
-        //Debug.Log("Board awake");
         tiles = new List<Tile>(16);
     }
 
@@ -41,9 +40,6 @@ public class Board : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
 
     private void Update()
     {
-        //var testTile = tiles[0]; 
-        //testTile.transform.position = tileGrid.cells[0].transform.position;
-        //Debug.Log("Update" + testTile.transform.position.ToString());
     }
 
     public Tile SpawnTile()
@@ -184,12 +180,10 @@ public class Board : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
     public void OnBeginDrag(PointerEventData eventData)
     {
         startP = eventData.position;
-        Debug.Log("OnBeginDrag");
     }
     
     public void OnDrag(PointerEventData eventData)
     {
-        //Debug.Log("OnDrag");
     }
     public void OnEndDrag(PointerEventData eventData)
     {
@@ -207,12 +201,10 @@ public class Board : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
         {
             if (chaX > 0)//right
             {
-                Debug.Log("right");
                 Move(Vector2Int.right, tileGrid.width - 2, -1,0,1);
             }
             else//left
             {
-                Debug.Log("left");
                 Move(Vector2Int.left, 1, 1,0,1);
             }
         }
@@ -221,12 +213,10 @@ public class Board : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHan
             
             if (chaY > 0)
             {
-                Debug.Log("up");
                 Move(Vector2Int.up, 0, 1,1,1);
             }
             else
             {
-                Debug.Log("down");
                 Move(Vector2Int.down, 0, 1, tileGrid.height - 2, -1);
             }
         }

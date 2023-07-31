@@ -1,15 +1,27 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleMobileAds.Editor", "GoogleMobileAds.Editor.csproj", "{f69996ac-1802-9ba4-0d13-9c5754ccae46}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{df71a2fa-6e0d-1f15-8354-b1ede5043471}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{9d9c8e91-7fa8-58b2-08ce-a4ce42ea8256}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{b4155298-abfb-ac05-5426-cce2104ce4d2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{f69996ac-1802-9ba4-0d13-9c5754ccae46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{f69996ac-1802-9ba4-0d13-9c5754ccae46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{df71a2fa-6e0d-1f15-8354-b1ede5043471}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{df71a2fa-6e0d-1f15-8354-b1ede5043471}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9d9c8e91-7fa8-58b2-08ce-a4ce42ea8256}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9d9c8e91-7fa8-58b2-08ce-a4ce42ea8256}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{b4155298-abfb-ac05-5426-cce2104ce4d2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{b4155298-abfb-ac05-5426-cce2104ce4d2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
